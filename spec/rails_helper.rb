@@ -8,6 +8,10 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'database_cleaner'
 
+include Warden::Test::Helpers
+Warden.test_mode!
+
+
 begin
   ActiveRecord::Migration.maintain_test_schema!
 rescue ActiveRecord::PendingMigrationError => e
@@ -24,4 +28,5 @@ RSpec.configure do |config|
   config.before(:each) { DatabaseCleaner.clean }
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+  # config.include Devise::Test::IntegrationHelpers, type: :feature
 end
