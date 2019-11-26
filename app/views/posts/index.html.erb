@@ -9,14 +9,7 @@
     </tr>
   </head>
   <body>
-    <tr>
-      <% @posts.each do |post| %>
-        <td><%= post.id %></td>
-        <td><%= post.date %></td>
-        <td><%= post.user.last_name %></td>
-        <td><%= truncate(post.rationale) %></td>
-    </tr>
-      <% end %>
-      </body>
+  <%= render @posts %>
+  </body>
 </table>
 
