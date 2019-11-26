@@ -1,13 +1,13 @@
 example_id                          | status | run_time        |
 ----------------------------------- | ------ | --------------- |
-./spec/features/post_spec.rb[1:1:1] | passed | 0.00876 seconds |
-./spec/features/post_spec.rb[1:1:2] | passed | 0.03221 seconds |
-./spec/features/post_spec.rb[1:1:3] | failed | 0.06282 seconds |
-./spec/features/post_spec.rb[1:2:1] | passed | 0.00796 seconds |
-./spec/features/post_spec.rb[1:2:2] | failed | 0.05754 seconds |
-./spec/features/post_spec.rb[1:2:3] | failed | 0.02775 seconds |
-./spec/features/static_spec.rb[1:1] | passed | 0.22166 seconds |
-./spec/models/post_spec.rb[1:1:1]   | failed | 0.00449 seconds |
-./spec/models/post_spec.rb[1:1:2]   | passed | 0.00456 seconds |
-./spec/models/user_spec.rb[1:1:1]   | passed | 0.00871 seconds |
-./spec/models/user_spec.rb[1:1:2]   | passed | 0.01055 seconds |
+./spec/features/post_spec.rb[1:1:1] | passed | 0.01884 seconds |
+./spec/features/post_spec.rb[1:1:2] | passed | 0.01223 seconds |
+./spec/features/post_spec.rb[1:1:3] | passed | 0.03426 seconds |
+./spec/features/post_spec.rb[1:2:1] | passed | 0.01329 seconds |
+./spec/features/post_spec.rb[1:2:2] | passed | 0.05618 seconds |
+./spec/features/post_spec.rb[1:2:3] | passed | 0.27835 seconds |
+./spec/features/static_spec.rb[1:1] | passed | 0.0241 seconds  |
+./spec/models/post_spec.rb[1:1:1]   | passed | 0.0401 seconds  |
+./spec/models/post_spec.rb[1:1:2]   | passed | 0.01362 seconds |
+./spec/models/user_spec.rb[1:1:1]   | passed | 0.00528 seconds |
+./spec/models/user_spec.rb[1:1:2]   | passed | 0.00756 seconds |

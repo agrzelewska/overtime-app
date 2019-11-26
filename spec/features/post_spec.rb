@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'navigate' do
-  user = User.create(email: 'test@test.com', password: 'asdfasdf', password_confirmation: 'asdfasdf', first_name: 'Jon', last_name: 'Snow')
+RSpec.describe 'navigate', type: :feature do
   before do
-    login_as(user, :scope => :user)
+    @user = User.create(email: 'test@test.com', password: 'asdfasdf', password_confirmation: 'asdfasdf', first_name: 'Jon', last_name: 'Snow')
+    login_as(@user, :scope => :user)
   end
 
   describe 'index' do
@@ -19,8 +19,8 @@ RSpec.describe 'navigate' do
     end
 
     it 'has a list of posts' do
-      post1 = Post.create(date: Date.today, rationale: "Post1")
-      post2 = Post.create(date: Date.today, rationale: "Post2")
+      post1 = Post.create(date: Date.today, rationale: "Post1", user_id: @user.id)
+      post2 = Post.create(date: Date.today, rationale: "Post2", user_id: @user.id)
       visit posts_path
       expect(page).to have_content(/Post1|Post2/)
     end
@@ -38,7 +38,7 @@ RSpec.describe 'navigate' do
     it 'can be created from new form page' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "Some rationale"
-      expect { click_on "Save" }.to change(Post.count).by(1)
+      expect { click_on "Save" }.to change(Post, :count).by(1)
     end
 
     it 'will have a user associated it' do
