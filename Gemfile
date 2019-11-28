@@ -23,6 +23,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails', '~> 3.8'
   gem 'factory_bot_rails'
+  gem 'gritter', '~> 1.2'
 end
 
 group :development do
