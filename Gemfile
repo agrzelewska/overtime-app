@@ -19,6 +19,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'gritter', '~> 1.2'
 gem 'administrate', '~> 0.12.0'
 gem 'bourbon', '~> 6.0'
+gem 'pundit', '~> 2.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
