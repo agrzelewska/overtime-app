@@ -22,11 +22,13 @@ class PostsController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    authorize @post
+  end
 
   def update
-    @post.update(post_params)
-    if @post.save
+    authorize @post
+    if @post.update(post_params)
       redirect_to @post, notice: "Your post was updated successfully"
     else
       render :new
