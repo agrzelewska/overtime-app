@@ -1,11 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'navigate', type: :feature do
+  let(:user) { create(:user) }
+  let!(:post1) { create(:post, user_id: user.id) }
+  let!(:post2) { create(:second_post, user_id: user.id) }
+
   before do
-    @user = FactoryBot.create(:user)
-    login_as(@user, :scope => :user)
-    @post1 = create(:post, user_id: @user.id)
-    @post2 = create(:second_post, user_id: @user.id)
+    login_as(user, :scope => :user)
   end
 
   describe 'index' do
@@ -21,7 +22,6 @@ RSpec.describe 'navigate', type: :feature do
     end
 
     it 'has a list of posts' do
-      visit posts_path
       expect(page).to have_content(/rationale|content/)
     end
 
@@ -44,7 +44,7 @@ RSpec.describe 'navigate', type: :feature do
   describe 'delete' do
     it 'can be deleted' do
       visit posts_path
-      click_link("delete_#{@post1.id}")
+      click_link("delete_#{post1.id}")
       expect(page.status_code).to eq(200)
     end
   end
@@ -74,7 +74,7 @@ RSpec.describe 'navigate', type: :feature do
 
   describe 'edit' do
     it 'can be edited' do
-      visit edit_post_path(@post1)
+      visit edit_post_path(post1)
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "Edited content"
       click_on 'Save'
@@ -85,7 +85,7 @@ RSpec.describe 'navigate', type: :feature do
       logout(:user)
       non_authorized_user = FactoryBot.create(:user)
       login_as(non_authorized_user, scope: :user)
-      visit edit_post_path(@post1)
+      visit edit_post_path(post1)
       expect(current_path).to eq(root_path)
     end
   end
