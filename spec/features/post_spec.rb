@@ -27,7 +27,7 @@ RSpec.describe 'navigate', type: :feature do
 
     it 'has a scope so that only post creators can see their posts' do
       admin_user = FactoryBot.create(:admin_user)
-      post_from_admin_user = Post.create(date: Date.today, rationale: 'Admin post', user_id: admin_user.id)
+      post_from_admin_user = Post.create(date: Date.today, rationale: 'Admin post', user_id: admin_user.id, overtime_request: 0.5)
       visit posts_path
       expect(page).to_not have_content(/Admin/)
     end
@@ -61,12 +61,14 @@ RSpec.describe 'navigate', type: :feature do
     it 'can be created from new form page' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "Some rationale"
+      fill_in 'post[overtime_request]', with: 0.5
       expect { click_on "Save" }.to change(Post, :count).by(1)
     end
 
     it 'will have a user associated it' do
       fill_in 'post[date]', with: Date.today
       fill_in 'post[rationale]', with: "User_Association"
+      fill_in 'post[overtime_request]', with: 0.5
       click_on "Save"
       expect(User.last.posts.last.rationale).to eq("User_Association")
     end
