@@ -29,4 +29,5 @@
 /config/master.key
 spec/examples.txt
 .DS_Store
+/.env
 

@@ -21,6 +21,7 @@ gem 'administrate', '~> 0.12.0'
 gem 'bourbon', '~> 6.0'
 gem 'pundit', '~> 2.1'
 gem 'twilio-ruby', '~> 5.29', '>= 5.29.1'
+gem 'dotenv-rails', '~> 2.7', '>= 2.7.5'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
