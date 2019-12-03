@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before do
-    @user = User.create(email: 'test@test.com', password: 'asdfasdf', password_confirmation: 'asdfasdf', first_name: 'Jon', last_name: 'Snow')
+    @user = create(:user)
   end
 
   describe 'creation' do
@@ -11,12 +11,22 @@ RSpec.describe User, type: :model do
     expect(@user).to be_valid
   end
 
-  it 'cannot be created without first name and last name' do
+  it 'cannot be created without first name' do
     @user.first_name = nil
+    expect(@user).to_not be_valid
+  end
+
+  it 'cannot be created without last name' do
     @user.last_name = nil
     expect(@user).to_not be_valid
   end
+
+  it 'cannot be created without phone number' do
+    @user.phone = nil
+    expect(@user).to_not be_valid
   end
+  end
+
 
   describe 'custom name methods' do
     it 'has a full name method that combines first and last name' do

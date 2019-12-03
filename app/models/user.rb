@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
-  validates_presence_of :first_name, :last_name
+  validates_presence_of :first_name, :last_name, :phone
 
   def full_name
     "#{last_name.upcase}, #{first_name.upcase}"
