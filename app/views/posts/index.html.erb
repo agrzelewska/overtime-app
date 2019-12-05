@@ -10,9 +10,11 @@
       <th>Status</th>
     </tr>
   </head>
-  <body>
+  <tbody id="posts">
   <%= render @posts %>
-  </body>
+  </tbody>
 </table>
-<%= paginate @posts %>
 
+<div id="paginator"
+  <%= paginate @posts, remote: true %>
+</div>
