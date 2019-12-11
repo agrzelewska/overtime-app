@@ -18,7 +18,10 @@ puts '1 AdminUser created'
 
 100.times do |post|
   Post.create(date: Date.today,
-              rationale: "#{post} rationale content",
+              rationale: "#{post} rationale content: But I must explain to you how all this mistaken idea of denouncing
+                          pleasure and praising pain was born and I will give you a complete account of the system,
+                          and expound the actual teachings of the great explorer of the truth, the master-builder of
+                          human happiness.",
               user_id: @user.id,
               overtime_request: 2.5)
 end
