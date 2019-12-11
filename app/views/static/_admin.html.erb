@@ -5,9 +5,17 @@
     <%= render partial: 'pending_approval', locals: { pending_approvals: @pending_approvals }%>
   </div>
 
-  <div class="pending-homepage">
-    <p>dfdfd</p>
-  </div>
+  <div class="pending-homepage row">
+    <h2>Confirmation Log</h2>
+    <hr>
+    <%= render partial: 'confirmation_log', locals: { recent_audit_items: @recent_audit_items }%>
 
+    <div class="clear-fix">
+      <hr>
+      <%= link_to 'View all items', audit_logs_path, class: 'btn btn-primary' %>
+    </div>
+
+
+  </div>
 </div>
 
