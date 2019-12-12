@@ -1,11 +1,11 @@
-@user = User.create(email: 'test@test.com',
+@employee = Employee.create(email: 'test@test.com',
                     password: 'asdfasdf',
                     password_confirmation: 'asdfasdf',
                     first_name: 'Jon',
                     last_name: 'Snow',
                     phone: '432432432')
 
-puts '1 User created'
+puts '1 Employee created'
 
 AdminUser.create(email: 'admin@test.com',
                  password: 'asdfasdf',
@@ -22,14 +22,14 @@ puts '1 AdminUser created'
                           pleasure and praising pain was born and I will give you a complete account of the system,
                           and expound the actual teachings of the great explorer of the truth, the master-builder of
                           human happiness.",
-              user_id: @user.id,
+              user_id: @employee.id,
               overtime_request: 2.5)
 end
 
 puts "100 Posts have  been created"
 
 3.times do |audit_log|
-  AuditLog.create(user_id: @user.id,
+  AuditLog.create(user_id: @employee.id,
                   status: 0,
                   start_date: (Date.today - 6))
 end
