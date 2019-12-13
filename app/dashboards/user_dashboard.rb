@@ -17,6 +17,8 @@ class UserDashboard < Administrate::BaseDashboard
       type: Field::String.with_options(searchable: false),
       created_at: Field::DateTime.with_options(searchable: false),
       updated_at: Field::DateTime.with_options(searchable: false),
+      ssn: Field::Number.with_options(searchable: false),
+      company: Field::String.with_options(searchable: false),
   }.freeze
 
   COLLECTION_ATTRIBUTES = [
@@ -37,6 +39,8 @@ class UserDashboard < Administrate::BaseDashboard
       :first_name,
       :last_name,
       :type,
+      :company,
+      :ssn,
       :created_at,
       :updated_at
   ]
@@ -47,5 +51,7 @@ class UserDashboard < Administrate::BaseDashboard
       :password,
       :first_name,
       :last_name,
+      :company,
+      :ssn,
   ]
 end

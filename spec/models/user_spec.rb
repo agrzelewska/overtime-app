@@ -36,6 +36,26 @@ RSpec.describe User, type: :model do
       @user.phone = '1234567890'
       expect(@user).to_not be_valid
     end
+
+    it 'cannot be created without ssn number' do
+      @user.ssn = nil
+      expect(@user).to_not be_valid
+    end
+
+    it  'requires the ssn attr to only contain integers' do
+      @user.ssn = 'myrealstr'
+      expect(@user).to_not be_valid
+    end
+
+    it 'requires the ssn attr to only have 4 chars' do
+      @user.phone = '1234567890'
+      expect(@user).to_not be_valid
+    end
+
+    it 'cannot be created without company' do
+      @user.company = nil
+      expect(@user).to_not be_valid
+    end
   end
 
   describe 'custom name methods' do

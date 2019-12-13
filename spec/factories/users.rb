@@ -8,6 +8,8 @@ FactoryBot.define do
     password { "asdfasdf" }
     password_confirmation { "asdfasdf" }
     phone { "123456789" }
+    ssn { 5004 }
+    company { "Some company"}
   end
 
   factory :admin_user, class: AdminUser do
@@ -17,6 +19,8 @@ FactoryBot.define do
     password { "asdfasdf" }
     password_confirmation { "asdfasdf" }
     phone { "123456789" }
+    ssn { 5004 }
+    company { "Some company"}
   end
 
 end
