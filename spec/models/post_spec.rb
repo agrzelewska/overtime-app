@@ -17,7 +17,7 @@ RSpec.describe Post, type: :model do
     end
 
     it 'has an overtime_request greater then 0.0' do
-      post.overtime_request = 0.0
+      post.daily_hours = 0.0
       expect(post).to_not be_valid
     end
   end

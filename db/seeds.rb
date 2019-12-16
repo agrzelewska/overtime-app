@@ -27,7 +27,7 @@ puts '1 AdminUser created'
                           and expound the actual teachings of the great explorer of the truth, the master-builder of
                           human happiness.",
               user_id: @employee.id,
-              overtime_request: 2.5)
+              daily_hours: 2.5)
 end
 
 puts "100 Posts have  been created"
